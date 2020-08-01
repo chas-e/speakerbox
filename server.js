@@ -22,7 +22,6 @@ require("./config/passport");
 
 const indexRoutes = require("./routes/index");
 const tracksRoutes = require("./routes/tracks");
-const { urlencoded } = require("express");
 
 // set view engine to ejs
 
@@ -42,6 +41,16 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.get('/auth/spotify', passport.authenticate('spotify'), function(req, res) {});
+
+app.get(
+    '/auth/spotify/callback',
+    passport.authenticate('spotify', { failureRedirect: '/login' }),
+    function(req, res) {
+        res.redirect('/');
+    }
+);
 
 // mount routes
 
