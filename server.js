@@ -31,7 +31,7 @@ app.set("view engine", "ejs");
 
 app.use(morgan("dev"));
 app.use(express.static("public"));
-app.use(urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride(_method));
 app.use(express.json());
 app.use(session({
