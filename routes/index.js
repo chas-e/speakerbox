@@ -3,7 +3,7 @@ const passport = require("passport");
 
 
 router.get("/", function(req, res) {
-    res.render("/index");
+    res.render("index", { title: "Speakerbox" });
 });
 
 // login route

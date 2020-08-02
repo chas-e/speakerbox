@@ -60,5 +60,5 @@ app.use("/", tracksRoutes);
 // listen up!! and check
 
 app.listen(port, () => {
-    console.log(`Express is listning on port:${port}`);
+    console.log(`Express is listening on port:${port}`);
 });
