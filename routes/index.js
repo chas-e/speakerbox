@@ -1,10 +1,9 @@
-const express = require("express");
-const router = express.Router();
+const router = require("express").Router();
 const passport = require("passport");
 
 
 router.get("/", function(req, res) {
-    res.render("index");
+    res.render("/index");
 });
 
 // login route
