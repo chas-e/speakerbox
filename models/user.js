@@ -4,7 +4,13 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
     displayName: {
         type: String,
-
+    },
+    email: {
+        type: String
     }
 
-}, { timestamps: true });
+}, {
+    timestamps: true
+});
+
+module.exports = mongoose.model("User", userSchema);

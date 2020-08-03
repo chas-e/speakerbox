@@ -7,9 +7,9 @@ router.get("/", function(req, res) {
 });
 
 // login route
-router.get('/authorize', passport.authenticate('spotify', { scope: ['user-read-private', 'user-read-email'] }));
+router.get('/authorize/spotify', passport.authenticate('spotify', { scope: ['user-read-private', 'user-read-email'] }));
 
-// google callback route
+// spotify callback route
 router.get('/oauth2callback', passport.authenticate('spotify', {
     successRedirect: '/',
     failureRedirect: '/'
