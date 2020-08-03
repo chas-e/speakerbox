@@ -1,6 +1,7 @@
 const passport = require("passport");
 const { deserializeUser } = require("passport");
 const SpotifyStrategy = require("passport-spotify").Strategy;
+const User = require("../models/user");
 
 passport.use(
     new SpotifyStrategy({
