@@ -8,7 +8,7 @@ router.get("/", function(req, res) {
 
 // login route
 router.get('/auth/spotify', passport.authenticate('spotify', {
-        scope: ['user-read-private', 'user-read-email']
+        scope: ['user-read-email', 'user-read-private']
     }),
     function(req, res) {});
 

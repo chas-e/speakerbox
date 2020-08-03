@@ -39,18 +39,11 @@ app.use(session({
     resave: false,
     saveUninitialized: true
 }));
+
+// mount passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.get('/auth/spotify', passport.authenticate('spotify'), function(req, res) {});
-
-app.get(
-    '/auth/spotify/callback',
-    passport.authenticate('spotify', { failureRedirect: '/login' }),
-    function(req, res) {
-        res.redirect('/');
-    }
-);
 
 // mount routes
 
