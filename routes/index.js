@@ -1,10 +1,10 @@
 const router = require("express").Router();
 const passport = require("passport");
+const indexCtrl = require("../controllers/index");
 
 
-router.get("/", function(req, res) {
-    res.render("index", { title: "Speakerbox" });
-});
+router.get("/", indexCtrl.index);
+
 
 // login route
 router.get('/auth/spotify', passport.authenticate('spotify', {
