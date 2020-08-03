@@ -7,6 +7,10 @@ const userSchema = new Schema({
     },
     email: {
         type: String
+    },
+
+    spotifyId: {
+        type: String
     }
 
 }, {

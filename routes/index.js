@@ -8,14 +8,20 @@ router.get("/", function(req, res) {
 
 // login route
 router.get('/auth/spotify', passport.authenticate('spotify', {
-    scope: ['user-read-email', "user-read-private"]
-}));
+        scope: ['user-read-email', "user-read-private"],
+        showDialog: true
+    }),
+    function(req, res) {
+
+    }
+);
 
 // spotify callback route
-router.get('/oauth2callback',
+router.get('/auth/spotify/callback',
     passport.authenticate('spotify', {
         successRedirect: '/',
-        failureRedirect: '/login'
+        failureRedirect: '/login',
+        failureFlash: true
     }));
 
 

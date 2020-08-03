@@ -1,5 +1,4 @@
 const passport = require("passport");
-const { deserializeUser } = require("passport");
 const SpotifyStrategy = require("passport-spotify").Strategy;
 const User = require("../models/user");
 
@@ -11,9 +10,32 @@ passport.use(
 
         },
         function(accessToken, refreshToken, expires_in, profile, done) {
-            deserializeUser.findOrCreate({ spotifyId: profile.id }, function(err, user) {
-                return done(err, user);
+            User.findOne({ "spotifyId": profile.id }, function(err, user) {
+                if (user) {
+                    return done(err, user);
+                } else {
+                    console.log(profile);
+                    const newUser = new User({
+                        displayName: profile.displayName,
+                        email: profile.emails[0].value,
+                        spotifyId: profile.id
+                    });
+                    newUser.save(function(err) {
+                        return done(err, newUser);
+                    });
+                }
             });
         }
-    )
-);
+    ));
+
+// serialize user for session
+passport.serializeUser(function(user, done) {
+    done(null, user.id);
+});
+
+// deserialize user after session
+passport.deserializeUser(function(id, done) {
+    User.findById(id, function(err, user) {
+        done(err, user);
+    });
+});

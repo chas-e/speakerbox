@@ -10,7 +10,15 @@
 
 <body>
     <nav>
-        <a href="/auth/spotify">Login with spotify</a>
+        <% if(user) { %>
+
+            <a href="/logout">Log Out</a>
+
+            <%  } else { %>
+
+                <a href="/auth/spotify">Login with spotify</a>
+
+                <% } %>
     </nav>
     <h1>
         SPEAKERBOX
