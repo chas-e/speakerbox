@@ -12,10 +12,10 @@ router.get('/auth/spotify', passport.authenticate('spotify', {
 }));
 
 // spotify callback route
-router.get('oauth2callback',
+router.get('/oauth2callback',
     passport.authenticate('spotify', {
         successRedirect: '/',
-        failureRedirect: '/'
+        failureRedirect: '/login'
     }));
 
 
