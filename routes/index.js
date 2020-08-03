@@ -7,13 +7,19 @@ router.get("/", function(req, res) {
 });
 
 // login route
-router.get('/authorize/spotify', passport.authenticate('spotify', { scope: ['user-read-private', 'user-read-email'] }));
+router.get('/auth/spotify', passport.authenticate('spotify', {
+        scope: ['user-read-private', 'user-read-email']
+    }),
+    function(req, res) {});
 
 // spotify callback route
-router.get('/oauth2callback', passport.authenticate('spotify', {
-    successRedirect: '/',
-    failureRedirect: '/'
-}));
+router.get('/auth/spotify/callback',
+    passport.authenticate('spotify', {
+        failureRedirect: '/login'
+    }),
+    function(req, res) {
+        res.redirect("/");
+    });
 
 // logout route
 router.get('/logout', function(req, res) {
