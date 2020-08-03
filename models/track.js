@@ -16,8 +16,10 @@ const trackSchema = new Schema({
         ref: "Album"
     },
     releaseDate: {
-        type: Date
+        type: Date,
+        default: Date.now
     }
+
 }, {
     timestamps: true
 });
