@@ -18,5 +18,15 @@ function index(req, res) {
 }
 
 function create(req, res) {
+    Artist.findById(req.params.id, function(err, artist) {
+        Track.findById(req.params.id, function(err, track) {
+            const album = new Album(req.body);
+            album.artist = artist;
+            album.tracks = track;
+            album.save(function(err, album) {
+                res.redirect("/albums");
 
+            });
+        });
+    });
 }
