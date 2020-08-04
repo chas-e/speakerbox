@@ -20,6 +20,7 @@ function index(req, res) {
 function create(req, res) {
     Artist.findById(req.params.id, function(err, artist) {
         Track.findById(req.params.id, function(err, track) {
+            console.log(req.body);
             const album = new Album(req.body);
             album.artist = artist;
             album.tracks = track;

@@ -3,12 +3,21 @@
     margin: 0;
 }
 
-main {
-    font-family: 'Raleway', sans-serif;
-}
-
 body {
     display: grid;
+    display: flex;
+    flex-direction: column;
     background: #36383d;
     color: whitesmoke;
+    justify-content: center;
+    align-content: center;
+}
+
+nav {
+    justify-content: center;
+    align-content: center;
+}
+
+main {
+    font-family: 'Raleway', sans-serif;
 }

@@ -10,24 +10,24 @@
             <select name="album">
                 <% if(albums.length) { %>
                     <% albums.forEach(function(al) { %>
-                       <option>Null</option>
-                        <option><%= al.title %></option> 
+                       <option value="null">Null</option>
+                        <option value="<%=al._id%>"><%= al.title %></option> 
                        <%  }); %>
                 <% } else { %>
-                    <option>Null</option>
+                    <option value="null">Null</option>
                 <% } %>
             </select>
             <label>Select Tracks</label>
             <select name="tracks">
                 <% if(tracks.length) { %>
                 <% tracks.forEach(function(t) { %>
-                    <option>Null</option>
-                    <option>
+                    <option value="null">Null</option>
+                    <option value="<%=t._id%>">
                         <%= t.title %>
                     </option>
                     <% }); %>
                         <% } else { %>
-                            <option>Null</option>
+                            <option value="null">Null</option>
                             <% } %>
                                 </select>
             <input type="submit" value="Submit Artist">
