@@ -33,4 +33,4 @@ albumSchema = new Schema({
 
 });
 
-model.exports = mongoose.model("Album", albumSchema);
+module.exports = mongoose.model("Album", albumSchema);

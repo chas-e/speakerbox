@@ -1,11 +1,40 @@
 <%- include("../partials/header") %>
-    <section>
+    <section id="track-section">
         <h1>
             <%= title %>
         </h1>
+        <h2>Enter your favorite tracks:</h2>
+        <form action="/tracks" id="new-track" method="POST">
+            <label>Enter Track Title</label>
+            <input type="text" name="title" placeholder="Enter A Track Title Here">
+            <label>Select Release Date</label>
+            <input type="date" name=releaseDate>
+            <label>Select Artist</label>
+            <select name="artist">
+                <% if(artists.length) { %>
+                <% artists.forEach(function(a) { %>
+                    <option><%= a.name %></option>
+                    <% }); %>
+                <% } else { %>
+                    <option>No Artists Entered Yet</option> 
+                <% } %>
+            </select>
+            <label>Select Album</label>
+            <select name="album">
+            <% if(albums.length) { %>
+                <% albums.forEach(function(al) { %>
+                   <option><%= al.title %></option> 
+                   <%  }); %>
+            <% } else { %>
+                <option>No Albums Entered Yet</option>
+            <% } %>
+            </select>
+            <input type="submit" value="Submit Track">
+        </form>
+
         <ul id="track-list">
-            <% if(tracks) { %>
-                <%  tracks.forEach(t) { %>
+            <% if(tracks.length) { %>
+                <%  tracks.forEach(function(t) { %>
 
                     <li>
                         <%= t.title  %>
@@ -14,7 +43,7 @@
                                     <%= t.releaseDate  %>
                     </li>
 
-                    <% } %>
+                    <% }); %>
 
                         <% } else { %>
 
