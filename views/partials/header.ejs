@@ -13,12 +13,30 @@
 
 <body>
     <nav>
-        <h3>
-            <a href="/index">Home</a>
-        </h3>
-        <h3>
-            <a href="/tracks">Tracks</a>
-        </h3>
+        <% if(user) { %>
+
+            <h3>
+                <a href="/logout">Log Out</a>
+            </h3>
+
+            <%  } else { %>
+
+                <h3>
+                    <a href="/auth/spotify">Login with spotify</a>
+                </h3>
+
+                <% } %>
+
+                    <h3>
+                        <a href="/tracks">Tracks</a>
+                    </h3>
+                    <h3>
+                        <a href="/artists">Artists</a>
+                    </h3>
+                    <h3>
+                        <a href="/albums">Albums</a>
+                    </h3>
+
     </nav>
     <main>
         <h1>

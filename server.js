@@ -21,8 +21,10 @@ require("./config/passport");
 
 // require routes
 
-const indexRoutes = require("./routes/index");
-const tracksRoutes = require("./routes/tracks");
+const indexRouter = require("./routes/index");
+const tracksRouter = require("./routes/tracks");
+const artistsRouter = require("./routes/artists");
+const albumsRouter = require("./routes/albums");
 
 // set view engine to ejs
 
@@ -49,8 +51,10 @@ app.use(passport.session());
 
 // mount routes
 
-app.use("/", indexRoutes);
-app.use("/tracks", tracksRoutes);
+app.use("/", indexRouter);
+app.use("/tracks", tracksRouter);
+app.use("/artists", artistsRouter);
+app.use("/albums", albumsRouter);
 
 // listen up!! and check
 
