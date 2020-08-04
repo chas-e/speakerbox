@@ -8,5 +8,7 @@ main {
 }
 
 body {
-    display: grid
+    display: grid;
+    background: #36383d;
+    color: whitesmoke;
 }

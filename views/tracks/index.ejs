@@ -1,7 +1,30 @@
 <%- include("../partials/header") %>
-    <h1>Discover Tracks</h1>
+    <section>
+        <h1>
+            <%= title %>
+        </h1>
+        <ul id="track-list">
+            <% if(tracks) { %>
+                <%  tracks.forEach(t) { %>
 
+                    <li>
+                        <%= t.title  %>
+                            <%= t.artist  %>
+                                <%= t.album  %>
+                                    <%= t.releaseDate  %>
+                    </li>
 
+                    <% } %>
+
+                        <% } else { %>
+
+                            <h3>No Tracks to Display Yet!</h3>
+
+                            <% } %>
+
+        </ul>
+
+    </section>
 
 
 

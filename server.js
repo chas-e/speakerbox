@@ -50,7 +50,7 @@ app.use(passport.session());
 // mount routes
 
 app.use("/", indexRoutes);
-app.use("/", tracksRoutes);
+app.use("/tracks", tracksRoutes);
 
 // listen up!! and check
 

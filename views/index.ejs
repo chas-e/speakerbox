@@ -12,13 +12,22 @@
     <nav>
         <% if(user) { %>
 
-            <a href="/logout">Log Out</a>
+            <h3>
+                <a href="/logout">Log Out</a>
+            </h3>
 
             <%  } else { %>
 
-                <a href="/auth/spotify">Login with spotify</a>
+                <h3>
+                    <a href="/auth/spotify">Login with spotify</a>
+                </h3>
 
                 <% } %>
+
+                    <h3>
+                        <a href="/tracks/index">Tracks</a>
+                    </h3>
+
     </nav>
     <h1>
         SPEAKERBOX
