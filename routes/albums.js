@@ -3,8 +3,8 @@ const router = require("express").Router();
 const albumsCtrl = require("../controllers/albums");
 
 //mount routes for required functionality
-router.get("/albums", isLoggedIn, albumsCtrl.index);
-router.post("/albums", isLoggedIn, albumsCtrl.create);
+router.get("/", isLoggedIn, albumsCtrl.index);
+router.post("/", isLoggedIn, albumsCtrl.create);
 
 // middleware to ensure user is authorized
 function isLoggedIn(req, res, next) {

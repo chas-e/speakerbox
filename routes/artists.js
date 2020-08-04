@@ -2,8 +2,8 @@
 const router = require("express").Router();
 const artistsCtrl = require("../controllers/artists");
 
-router.get("/artists", isLoggedIn, artistsCtrl.index);
-router.post("/artists", isLoggedIn, artistsCtrl.create);
+router.get("/", isLoggedIn, artistsCtrl.index);
+router.post("/", isLoggedIn, artistsCtrl.create);
 
 // middleware to ensure user is authorized
 function isLoggedIn(req, res, next) {

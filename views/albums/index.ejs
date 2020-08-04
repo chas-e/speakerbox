@@ -1,8 +1,5 @@
 <%- include("../partials/header") %>
     <section id="album-section">
-        <h1>
-            <%= title %>
-        </h1>
         <h2>Enter Your Favorite Albums:</h2>
         <form action="/albums" id="new-album" method="POST">
             <label>Enter Album Title</label>
@@ -10,25 +7,27 @@
             <label>Select Release Date</label>
             <input type="date" name=releaseDate>
             <label>Enter a Label</label>
-            <input type="text" name="label" placeholder="Enter the Label of the Album Here">
+            <input type="text" name="label" placeholder="Enter the Record Label Here">
             <label>Select Artist</label>
             <select name="artist">
                 <% if(artists.length) { %>
                 <% artists.forEach(function(a) { %>
+                    <option>Null</option>
                     <option><%= a.name %></option>
                     <% }); %>
                 <% } else { %>
-                    <option>No Artists Entered Yet</option> 
+                    <option>Null</option> 
                 <% } %>
             </select>
             <label>Select Tracks</label>
             <select name="tracks">
             <% if(tracks.length) { %>
                 <% tracks.forEach(function(t) { %>
+                    <option>Null</option>
                    <option><%= t.title %></option> 
                    <%  }); %>
             <% } else { %>
-                <option>No Tracks Entered Yet</option>
+                <option>Null</option>
             <% } %>
             </select>
             <input type="submit" value="Submit Album">

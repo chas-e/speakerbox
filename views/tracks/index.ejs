@@ -1,8 +1,5 @@
 <%- include("../partials/header") %>
     <section id="track-section">
-        <h1>
-            <%= title %>
-        </h1>
         <h2>Enter your favorite tracks:</h2>
         <form action="/tracks" id="new-track" method="POST">
             <label>Enter Track Title</label>
@@ -13,16 +10,18 @@
             <select name="artist">
                 <% if(artists.length) { %>
                 <% artists.forEach(function(a) { %>
+                    <option>null</option>
                     <option><%= a.name %></option>
                     <% }); %>
                 <% } else { %>
-                    <option>No Artists Entered Yet</option> 
+                    <option>Null</option> 
                 <% } %>
             </select>
             <label>Select Album</label>
             <select name="album">
             <% if(albums.length) { %>
                 <% albums.forEach(function(al) { %>
+                    <option>null</option> 
                    <option><%= al.title %></option> 
                    <%  }); %>
             <% } else { %>

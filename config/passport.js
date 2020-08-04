@@ -14,7 +14,6 @@ passport.use(
                 if (user) {
                     return done(err, user);
                 } else {
-                    console.log(profile);
                     const newUser = new User({
                         displayName: profile.displayName,
                         email: profile.emails[0].value,
