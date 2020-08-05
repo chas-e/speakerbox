@@ -6,15 +6,7 @@ const trackSchema = new Schema({
         type: String,
         required: true
     },
-    artist: {
-        type: Schema.Types.ObjectId,
-        ref: "Artist"
 
-    },
-    album: {
-        type: Schema.Types.ObjectId,
-        ref: "Album"
-    },
     releaseDate: {
         type: Date,
         default: Date.now

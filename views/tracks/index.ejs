@@ -4,30 +4,8 @@
         <form action="/tracks" id="new-track" method="POST">
             <label>Enter Track Title</label>
             <input type="text" name="title" placeholder="Enter A Track Title Here">
-            <label>Select Release Date</label>
+            <label>Enter Release Date</label>
             <input type="date" name=releaseDate>
-            <label>Select Artist</label>
-            <select name="artist">
-                <% if(artists.length) { %>
-                <% artists.forEach(function(a) { %>
-                    <option value="null">Null</option>
-                    <option value="<%=a._id%>"><%= a.name %></option>
-                    <% }); %>
-                <% } else { %>
-                    <option value="null">Null</option> 
-                <% } %>
-            </select>
-            <label>Select Album</label>
-            <select name="album">
-            <% if(albums.length) { %>
-                <% albums.forEach(function(al) { %>
-                    <option value="null">Null</option> 
-                   <option value="<%=al._id%>"><%= al.title %></option> 
-                   <%  }); %>
-            <% } else { %>
-                <option value="null">Null</option>
-            <% } %>
-            </select>
             <input type="submit" value="Submit Track">
         </form>
 
@@ -37,9 +15,7 @@
 
                     <li>
                         <%= t.title  %>
-                            <%= t.artist  %>
-                                <%= t.album  %>
-                                    <%= t.releaseDate  %>
+                            <%= t.releaseDate  %>
                     </li>
 
                     <% }); %>

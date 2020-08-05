@@ -9,25 +9,20 @@ module.exports = {
 
 function index(req, res) {
     Album.find({}, function(err, albums) {
-        Artist.find({}, function(err, artists) {
-            Track.find({}, function(err, tracks) {
-                res.render("albums/index", { title: "All Albums", user: req.user, albums, artists, tracks });
-            });
+        Track.find({}, function(err, tracks) {
+            res.render("albums/index", { title: "All Albums", user: req.user, albums, tracks });
         });
     });
 }
 
 function create(req, res) {
-    Artist.findById(req.params.id, function(err, artist) {
-        Track.findById(req.params.id, function(err, track) {
-            console.log(req.body);
-            const album = new Album(req.body);
-            album.artist = artist;
-            album.tracks = track;
-            album.save(function(err, album) {
-                res.redirect("/albums");
+    Track.findById(req.params.id, function(err, track) {
+        console.log(req.body);
+        const album = new Album(req.body);
+        album.tracks = track;
+        album.save(function(err, album) {
+            res.redirect("/albums");
 
-            });
         });
     });
 }

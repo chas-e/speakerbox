@@ -17,11 +17,6 @@ albumSchema = new Schema({
         default: "Universal"
     },
 
-    artist: {
-        type: Schema.Types.ObjectId,
-        ref: "Artist"
-    },
-
     tracks: [{
         type: Schema.Types.ObjectId,
         ref: "Track"

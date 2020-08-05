@@ -8,17 +8,6 @@
             <input type="date" name=releaseDate>
             <label>Enter a Label</label>
             <input type="text" name="label" placeholder="Enter the Record Label Here">
-            <label>Select Artist</label>
-            <select name="artist">
-                <% if(artists.length) { %>
-                <% artists.forEach(function(a) { %>
-                    <option value="null">Null</option>
-                    <option value="<%=a._id%>"><%= a.name %></option>
-                    <% }); %>
-                <% } else { %>
-                    <option value="null">Null</option> 
-                <% } %>
-            </select>
             <label>Select Tracks</label>
             <select name="tracks">
             <% if(tracks.length) { %>
@@ -41,8 +30,7 @@
                         <%= al.title  %>
                             <%= al.releaseDate  %>
                                 <%= al.label %>
-                                    <%= al.artist  %>
-                                        <%= al.tracks  %>
+                                    <%= al.tracks  %>
                     </li>
 
                     <% }); %>

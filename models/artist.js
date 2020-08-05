@@ -18,11 +18,6 @@ artistSchema = new Schema({
         ref: "Album"
     }],
 
-    tracks: [{
-        type: Schema.Types.ObjectId,
-        ref: "Track"
-    }]
-
 }, {
     timestamps: true
 });
