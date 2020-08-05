@@ -1,0 +1,56 @@
+<%- include("../partials/header") %>
+    <section id="album-dets">
+        <h1>Album Title:
+            <%= album.title %>
+        </h1>
+
+        <h3>Released:
+            <%= album.releaseDate %>
+        </h3>
+        <h3>Label:
+            <%= album.label %>
+        </h3>
+        <h3>
+            <form id="delete-album" action="albums/<%= album._id %>?_method=DELETE" method="POST">
+                <label>Delete Album:</label>
+                <button type="submit">🚮</button>
+            </form>
+        </h3>
+        <h3>
+            <a href="/albums/<%=album._id%>/edit">Edit Album</a>
+        </h3>
+
+
+
+        <% if(album.tracks) { %>
+            <% album.tracks.forEach(function(t) { %>
+                <h3>Tracks:</h3>
+                <ul>
+                    <li>
+                        <%= t.title %>
+                    </li>
+                </ul>
+
+                <%  }); %>
+                    <% } else { %>
+
+                        <h3>No Tracks Entered Yet!</h3>
+                        <a href="/tracks">Enter Tracks</a>
+
+                        <% } %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+
+    <%- include("../partials/footer") %>
