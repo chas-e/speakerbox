@@ -20,7 +20,12 @@ albumSchema = new Schema({
     tracks: [{
         type: Schema.Types.ObjectId,
         ref: "Track"
-    }]
+    }],
+
+    author: {
+        type: Schema.Types.ObjectId,
+        ref: "User"
+    }
 
 
 }, {

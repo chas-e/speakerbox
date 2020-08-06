@@ -12,22 +12,25 @@
         <ul id="artist-list">
             <% if(artists.length) { %>
                 <%  artists.forEach(function(a) { %>
+                    <% if(a.author && a.author.equals(user && user._id)) { %>
 
-                    <li>
-                        <%= a.name  %>
-                    </li>
+                        <li>
+                            <%= a.name  %>
+                        </li>
 
-                    <% }); %>
+                        <% } %>
+                            <% }); %>
 
-                        <% } else { %>
+                                <% } else { %>
 
-                            <h3>No Artists to Display Yet!</h3>
+                                    <h3>No Artists to Display Yet!</h3>
 
-                            <% } %>
+                                    <% } %>
 
         </ul>
 
     </section>
+
 
 
 

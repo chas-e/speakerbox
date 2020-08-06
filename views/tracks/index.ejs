@@ -12,18 +12,20 @@
         <ul id="track-list">
             <% if(tracks.length) { %>
                 <%  tracks.forEach(function(t) { %>
+                    <% if(t.author && t.author.equals(user && user._id)) { %>
 
-                    <li>
-                        <%= t.title  %>
-                    </li>
+                        <li>
+                            <%= t.title  %>
+                        </li>
 
-                    <% }); %>
+                        <% } %>
+                            <% }); %>
 
-                        <% } else { %>
+                                <% } else { %>
 
-                            <h3>No Tracks to Display Yet!</h3>
+                                    <h3>No Tracks to Display Yet!</h3>
 
-                            <% } %>
+                                    <% } %>
 
         </ul>
 

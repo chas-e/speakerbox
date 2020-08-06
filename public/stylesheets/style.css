@@ -34,12 +34,12 @@ nav {
 
 main {
     font-family: 'Raleway', sans-serif;
-    margin-top: 5rem;
+    margin-top: 7rem;
     flex: 1 0 auto;
 }
 
 h1 {
-    color: whitesmoke
+    color: whitesmoke;
 }
 
 p {

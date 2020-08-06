@@ -18,6 +18,7 @@ function index(req, res) {
 }
 
 function create(req, res) {
+    req.body.author = req.user._id;
     Album.create(req.body, function(err, album) {
         res.redirect("/albums");
     });

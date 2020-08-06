@@ -14,20 +14,21 @@
         <ul id="album-list">
             <% if(albums.length) { %>
                 <%  albums.forEach(function(al) { %>
+                    <% if(al.author && al.author.equals(user && user._id)) { %>
 
-                    <li>
-                        <%= al.title  %>
-                            <a href="/albums/<%= al._id %>">Show Album Details</a>
+                        <li>
+                            <%= al.title  %>
+                                <a href="/albums/<%= al._id %>">Show Album Details</a>
 
-                    </li>
+                        </li>
+                        <% } %>
+                            <% }); %>
 
-                    <% }); %>
+                                <% } else { %>
 
-                        <% } else { %>
+                                    <h3>No Albums to Display Yet!</h3>
 
-                            <h3>No Albums to Display Yet!</h3>
-
-                            <% } %>
+                                    <% } %>
 
         </ul>
 

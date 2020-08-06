@@ -21,6 +21,7 @@ function index(req, res) {
 
 // create a new artist doc
 function create(req, res) {
+    req.body.author = req.user._id;
     Artist.create(req.body, function(err, artist) {
         res.redirect("/artists");
     });

@@ -18,6 +18,7 @@ function index(req, res) {
 
 // create a new track
 function create(req, res) {
+    req.body.author = req.user._id;
     Track.create(req.body, function(err, track) {
         res.redirect("/tracks");
     });
@@ -26,7 +27,6 @@ function create(req, res) {
 // Associate a track to an album
 function addToAlbum(req, res) {
     Album.findById(req.params.id, function(err, album) {
-        console.log(album);
         album.tracks.push(req.body.trackId);
         album.save(function(err) {
             res.redirect(`/albums/${album._id}`);

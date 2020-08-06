@@ -10,6 +10,11 @@ const trackSchema = new Schema({
     releaseDate: {
         type: Date,
         default: Date.now
+    },
+
+    author: {
+        type: Schema.Types.ObjectId,
+        ref: "User"
     }
 
 }, {
