@@ -8,7 +8,6 @@
 
 ### Wireframes
 
-
 ## Technologies Used
 
 ## Getting Started
