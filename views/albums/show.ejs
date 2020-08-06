@@ -11,7 +11,7 @@
             <%= album.label %>
         </h3>
         <h3>
-            <form id="delete-album" action="albums/<%= album._id %>?_method=DELETE" method="POST">
+            <form id="delete-album" action="/albums/<%= album._id%>?_method=DELETE" method="POST">
                 <label>Delete Album:</label>
                 <button type="submit">🚮</button>
             </form>
@@ -23,21 +23,20 @@
 
 
         <% if(album.tracks) { %>
-            <% album.tracks.forEach(function(t) { %>
-                <h3>Tracks:</h3>
-                <ul>
-                    <li>
-                        <%= t.title %>
-                    </li>
-                </ul>
+            <h3>Tracks:</h3>
+            <ul>
+                <%- album.tracks.map(t =>
+            `<li>${t.title}</li>`
+            ).join("") %>
 
-                <%  }); %>
-                    <% } else { %>
+            </ul>
+            <% } else { %>
 
-                        <h3>No Tracks Entered Yet!</h3>
-                        <a href="/tracks">Enter Tracks</a>
-
-                        <% } %>
+                <h3>No Tracks Entered Yet!</h3>
+                <h3>
+                    <a href="/tracks">Enter Tracks</a>
+                </h3>
+                <% } %>
 
 
 

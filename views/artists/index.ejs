@@ -6,16 +6,6 @@
             <input type="text" name="name" placeholder="Enter Artist's Name Here">
             <label>Enter Artist's Genre</label>
             <input type="text" name=genre placeholder="Enter Genre Here">
-            <label>Select Album</label>
-            <select name="album">
-                <% if(albums.length) { %>
-                    <% albums.forEach(function(al) { %>
-                       <option value="null">Null</option>
-                        <option value="<%=al._id%>"><%= al.title %></option> 
-                       <%  }); %>
-                <% } else { %>
-                    <option value="null">Null</option>
-                <% } %>
             <input type="submit" value="Submit Artist">
         </form>
 
@@ -26,7 +16,6 @@
                     <li>
                         <%= a.name  %>
                             <%= a.genre %>
-                                <%= a.albums  %>
                     </li>
 
                     <% }); %>

@@ -1,0 +1,31 @@
+<%- include("../partials/header") %>
+    <section id="edit-album">
+        <h1>Edit
+            <%= album.title %> Below:</h1>
+        <h3>
+            <form id="album-update" action="/albums/<%=album._id%>" method="PUT">
+                <label>Edit Title</label>
+                <input type="text" name="title" value="<%= album.title %>">
+                <label>Edit Release Date</label>
+                <input type="date" name="releaseDate" value="<%= album.releaseDate %>">
+                <label>Edit Label</label>
+                <input type="text" name="label" value="<%= album.label %>">
+                <button type="submit">Edit Album</button>
+            </form>
+        </h3>
+    </section>
+    <section id="connect-tracks">
+        <form action="/albums/<%= album._id %>/tracks" method="POST">
+            <select name="trackId">
+        <%- tracks.map(t =>
+        `<option value = "${t._id}">${t.title}</option>`
+        ).join(" ") %>
+        </select>
+            <button type="submit">Add to Album</button>
+        </form>
+
+    </section>
+
+
+
+    <%- include("../partials/footer") %>

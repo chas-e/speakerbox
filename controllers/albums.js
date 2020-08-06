@@ -60,6 +60,7 @@ function edit(req, res) {
 
 function update(req, res) {
     Album.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, album) {
+        console.log(req.body);
         res.redirect(`/albums/${album._id}`, { user: req.user });
     });
 }

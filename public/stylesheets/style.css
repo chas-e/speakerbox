@@ -3,21 +3,48 @@
     margin: 0;
 }
 
+html {
+    background: url("../images/marshall-stacks.jpeg") no-repeat center fixed;
+    background-size: cover;
+    opacity: .95;
+}
+
 body {
     display: grid;
     display: flex;
     flex-direction: column;
-    background: #36383d;
-    color: whitesmoke;
+    color: #f7df8f;
     justify-content: center;
     align-content: center;
+    text-align: center;
+    /* margin-top: 5rem; */
+    line-height: 1.5;
+    font-size: 18px;
 }
 
 nav {
-    justify-content: center;
+    justify-content: space-around;
     align-content: center;
+    display: flex;
+    flex-direction: row;
+    background-color: #36383d;
+    height: 3rem;
+    align-items: center;
 }
 
 main {
     font-family: 'Raleway', sans-serif;
+    margin-top: 5rem;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: whitesmoke;
+}
+
+a:hover {
+    color: #1DB954
 }

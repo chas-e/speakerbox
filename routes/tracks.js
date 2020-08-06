@@ -4,6 +4,7 @@ const tracksCtrl = require("../controllers/tracks");
 
 router.get("/", isLoggedIn, tracksCtrl.index);
 router.post("/", isLoggedIn, tracksCtrl.create);
+router.post("/albums/:id/tracks", isLoggedIn, tracksCtrl.addToAlbum);
 
 // middleware to ensure user is authorized
 function isLoggedIn(req, res, next) {
