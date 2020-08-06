@@ -14,8 +14,6 @@ I wanted to feature music in this project, and so I thought it would be great to
 
 ### Wireframes
 
-<<<<<<< HEAD
-=======
 ![Screen Shot 2020-07-31 at 7.25.18 PM](https://i.imgur.com/5c5mgJX.png)
 
 ![Screen Shot 2020-07-31 at 7.26.08 PM](https://i.imgur.com/Rnmgzam.png)
@@ -38,12 +36,12 @@ I wanted to feature music in this project, and so I thought it would be great to
 
 ![Screen Shot 2020-08-06 at 3.25.59 PM](https://i.imgur.com/YDy84zX.png)
 
->>>>>>> master
 ## Technologies Used
 * Node.JS
 * Express
 * MongoDB
 * Mongoose
+* Passport
 * HTML5
 * CSS3
 * EJS View Engine
