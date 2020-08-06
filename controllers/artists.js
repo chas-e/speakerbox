@@ -11,19 +11,17 @@ module.exports = {
 // show initial artists view
 function index(req, res) {
     Artist.find({}, function(err, artists) {
-        Album.find({}, function(err, albums) {
-            res.render("artists/index", { title: "All Artists", user: req.user, artists, albums });
+        res.render("artists/index", {
+            title: "All Artists",
+            user: req.user,
+            artists
         });
     });
 }
 
 // create a new artist doc
 function create(req, res) {
-    Album.findById(req.params.id, function(err, album) {
-        const artist = new Artist(req.body);
-        artist.albums = album;
-        artist.save(function(err, artist) {
-            res.redirect("/artists");
-        });
+    Artist.create(req.body, function(err, artist) {
+        res.redirect("/artists");
     });
 }

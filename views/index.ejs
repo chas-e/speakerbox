@@ -9,17 +9,21 @@
 </head>
 
 <body>
+
     <nav>
         <% if(user) { %>
 
             <h3>
+                <img class="spotify-icn" src="../assets/Spotify_Icon_RGB_White.png" alt="">
                 <a href="/logout">Log Out</a>
             </h3>
 
             <%  } else { %>
 
                 <h3>
-                    <a href="/auth/spotify">Login with spotify</a>
+                    <img class="spotify-icn" src="../assets/Spotify_Icon_RGB_White.png">
+
+                    <a href="/auth/spotify">Login with Spotify</a>
                 </h3>
 
                 <% } %>
@@ -35,12 +39,17 @@
                     </h3>
 
     </nav>
-    <h1>
-        SPEAKERBOX
-    </h1>
-    <p>
-        Welcome to SpeakerBox!
-    </p>
+    <main>
+        <h1 id="open-hdr">
+            SPEAKERBOX
+        </h1>
+    </main>
+    <footer>
+        <h4>
+            SpeakerBox: Powered By Spotify
+            <img class="ptl-spotify-logo" src="../../assets/Spotify_Logo_RGB_White.png" alt="">
+        </h4>
+    </footer>
 </body>
 
 </html>

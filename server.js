@@ -52,9 +52,9 @@ app.use(passport.session());
 // mount routes
 
 app.use("/", indexRouter);
-app.use("/tracks", tracksRouter);
-app.use("/artists", artistsRouter);
-app.use("/albums", albumsRouter);
+app.use("/", tracksRouter);
+app.use("/", artistsRouter);
+app.use("/", albumsRouter);
 
 // listen up!! and check
 

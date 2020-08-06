@@ -13,21 +13,13 @@ module.exports = {
 
 function index(req, res) {
     Album.find({}, function(err, albums) {
-        Track.find({}, function(err, tracks) {
-            res.render("albums/index", { title: "All Albums", user: req.user, albums, tracks });
-        });
+        res.render("albums/index", { title: "All Albums", user: req.user, albums });
     });
 }
 
 function create(req, res) {
-    Track.findById(req.params.id, function(err, track) {
-        console.log(req.body);
-        const album = new Album(req.body);
-        album.tracks = track;
-        album.save(function(err, album) {
-            res.redirect("/albums");
-
-        });
+    Album.create(req.body, function(err, album) {
+        res.redirect("/albums");
     });
 }
 
@@ -44,7 +36,7 @@ function show(req, res) {
 
 function deleteAlbum(req, res) {
     Album.findByIdAndDelete(req.params.id, function(err, album) {
-        res.redirect("/albums", { user: req.user });
+        res.redirect("/albums");
     });
 }
 
@@ -60,7 +52,6 @@ function edit(req, res) {
 
 function update(req, res) {
     Album.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, album) {
-        console.log(req.body);
-        res.redirect(`/albums/${album._id}`, { user: req.user });
+        res.redirect(`/albums/${album._id}`);
     });
 }

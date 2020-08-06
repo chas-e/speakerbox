@@ -2,8 +2,8 @@ const router = require("express").Router();
 const tracksCtrl = require("../controllers/tracks");
 
 
-router.get("/", isLoggedIn, tracksCtrl.index);
-router.post("/", isLoggedIn, tracksCtrl.create);
+router.get("/tracks", isLoggedIn, tracksCtrl.index);
+router.post("/tracks", isLoggedIn, tracksCtrl.create);
 router.post("/albums/:id/tracks", isLoggedIn, tracksCtrl.addToAlbum);
 
 // middleware to ensure user is authorized

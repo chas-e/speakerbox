@@ -4,22 +4,21 @@
 }
 
 html {
-    background: url("../images/marshall-stacks.jpeg") no-repeat center fixed;
+    background: url("../images/big-marshall-stack.jpg") no-repeat center fixed;
     background-size: cover;
-    opacity: .95;
 }
 
 body {
     display: grid;
     display: flex;
     flex-direction: column;
-    color: #f7df8f;
+    color: whitesmoke;
     justify-content: center;
     align-content: center;
     text-align: center;
-    /* margin-top: 5rem; */
     line-height: 1.5;
     font-size: 18px;
+    min-height: 100vh;
 }
 
 nav {
@@ -27,7 +26,7 @@ nav {
     align-content: center;
     display: flex;
     flex-direction: row;
-    background-color: #36383d;
+    background-color: #100b08;
     height: 3rem;
     align-items: center;
 }
@@ -35,6 +34,17 @@ nav {
 main {
     font-family: 'Raleway', sans-serif;
     margin-top: 5rem;
+    flex: 1 0 auto;
+}
+
+h1 {
+    color: whitesmoke
+}
+
+p {
+    color: whitesmoke;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 li {
@@ -47,4 +57,30 @@ a {
 
 a:hover {
     color: #1DB954
+}
+
+footer {
+    background-color: #100b08;
+    color: whitesmoke;
+    height: 2rem;
+}
+
+.spotify-icn {
+    width: 26px;
+    height: 26px;
+}
+
+.ptl-spotify-icn {
+    width: 26px;
+    height: 26px;
+}
+
+.ptl-spotify-logo {
+    width: 70px;
+    height: auto;
+}
+
+#open-hdr {
+    color: #b3936a;
+    font-size: 3rem;
 }
