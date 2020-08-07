@@ -2,7 +2,7 @@
 
 ## Story of this Web App 
 
-I wanted to feature music in this project, and so I thought it would be great to use Spotify, since the Spotify web API features a ton of the functionality I wanted to purvey to my users. However, coding this application was a huge task, so I decided that features like music streaming, rendering album artwork data, and allowing users to update their data within spotify are goals better left to future versions. This app allows users to save data on their favorite tracks, albums, and artists, and allows associating tracks data with albums data via dropdown. All data is stored in MongoDB Atlas. The entire app is written in javascript using Node.JS and Express as well as Mongoose to facilitate data Schemas and Models, and to communicate with MongoDB.
+I wanted to feature music in this project, and so I thought it would be great to use Spotify, since the Spotify web API features a ton of the functionality I wanted to purvey to my users. Speakerbox allows users to save data on their favorite tracks, albums, and artists, and allows associating tracks data with albums data via dropdown. All data is stored in MongoDB Atlas. The entire app is written in javascript using Node.JS and Express as well as Mongoose to facilitate data Schemas and Models, and to communicate with MongoDB.
 
 ## Screenshots
 ### ERD
@@ -55,6 +55,7 @@ Click [this link](https://speakerbox.herokuapp.com/) to open Speakerbox in Herok
 
 ### From The Icebox:
 * Add Update/Delete Functionality for Tracks and Artists
-* Add streaming via a spotify widget
-* Complete authorization to allow users to only update their personal DB documents
+* Allow Users to access spotify data via the spotify web API
+* Add music streaming via a spotify widget
 * Incorporate Album Artwork as an embedded schema within Albums
+* Add functionality to disconnect tracks and albums from their parent albums and artists
