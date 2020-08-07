@@ -6,7 +6,7 @@ const Album = require("../models/album");
 module.exports = {
     index,
     create,
-    addToAlbum
+    addToAlbum,
 };
 
 // render the index view

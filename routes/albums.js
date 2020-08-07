@@ -9,6 +9,7 @@ router.get("/albums/:id", isLoggedIn, albumsCtrl.show);
 router.delete("/albums/:id", isLoggedIn, albumsCtrl.delete);
 router.get("/albums/:id/edit", isLoggedIn, albumsCtrl.edit);
 router.put("/albums/:id", isLoggedIn, albumsCtrl.update);
+router.post("/artists/:id/albums", isLoggedIn, albumsCtrl.addToArtist);
 
 // middleware to ensure user is authorized
 function isLoggedIn(req, res, next) {

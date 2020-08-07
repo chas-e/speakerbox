@@ -53,9 +53,22 @@ function removeArtist(req, res) {
 }
 
 function edit(req, res) {
-
+    Artist.findById(req.params.id)
+        .populate("albums").exec(function(err, artist) {
+            Album.find({ _id: { $nin: artist.albums } },
+                function(err, albums) {
+                    res.render("artists/edit", {
+                        title: "Edit Artist",
+                        user: req.user,
+                        artist,
+                        albums
+                    });
+                });
+        });
 }
 
 function update(req, res) {
-
+    Artist.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, artist) {
+        res.redirect(`/artists/${artist._id}`);
+    });
 }

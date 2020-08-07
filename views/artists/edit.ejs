@@ -4,13 +4,25 @@
             <%= artist.name %> Below:
         </h1>
         <h3>
-            <form id="artist-update" action="/artists/<%=artist._id%>" method="PUT">
-
+            <form id="artist-update" action="/artists/<%=artist._id%>?_method=PUT" method="POST">
+                <label>Edit Artist's Name</label>
+                <input type="text" name="name" value="<%= artist.name %>">
+                <label>Edit Artist's Genre</label>
+                <input type="text" name="genre" value="<%= artist.genre %>">
+                <button type="submit">Edit Artist</button>
             </form>
         </h3>
     </section>
 
-
-
+    <section id="connect-albums">
+        <form id="connect-albums-form" action="/artists/<%=artist._id%>/albums" method="POST">
+            <select name="albumId">
+            <%- albums.map(al =>
+        `<option value="${al._id}">${al.title}</option>`
+            ).join("") %>
+        </select>
+            <button type="submit">Add to Artist</button>
+        </form>
+    </section>
 
     <%- include("../partials/footer")  %>

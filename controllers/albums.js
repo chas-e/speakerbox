@@ -8,7 +8,8 @@ module.exports = {
     show,
     delete: deleteAlbum,
     edit,
-    update
+    update,
+    addToArtist
 };
 
 function index(req, res) {
@@ -54,5 +55,14 @@ function edit(req, res) {
 function update(req, res) {
     Album.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, album) {
         res.redirect(`/albums/${album._id}`);
+    });
+}
+
+function addToArtist(req, res) {
+    Artist.findById(req.params.id, function(err, artist) {
+        artist.albums.push(req.body.albumId);
+        artist.save(function(err) {
+            res.redirect(`/artists/${artist._id}`);
+        });
     });
 }

@@ -6,6 +6,8 @@ router.get("/artists", isLoggedIn, artistsCtrl.index);
 router.post("/artists", isLoggedIn, artistsCtrl.create);
 router.get("/artists/:id", artistsCtrl.show);
 router.delete("/artists/:id", artistsCtrl.delete);
+router.get("/artists/:id/edit", isLoggedIn, artistsCtrl.edit);
+router.put("/artists/:id", isLoggedIn, artistsCtrl.update);
 
 // middleware to ensure user is authorized
 function isLoggedIn(req, res, next) {
