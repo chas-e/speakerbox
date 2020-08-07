@@ -3,7 +3,7 @@
         <h1>Edit
             <%= album.title %> Below:</h1>
         <h3>
-            <form id="album-update" action="/albums/<%=album._id%>" method="PUT">
+            <form id="album-update" action="/albums/<%=album._id%>?_method=PUT" method="POST">
                 <label>Edit Title</label>
                 <input type="text" name="title" value="<%= album.title %>">
                 <label>Edit Release Date</label>
