@@ -1,0 +1,16 @@
+<%- include("../partials/header") %>
+    <section id="edit-artist">
+        <h1>Edit
+            <%= artist.name %> Below:
+        </h1>
+        <h3>
+            <form id="artist-update" action="/artists/<%=artist._id%>" method="PUT">
+
+            </form>
+        </h3>
+    </section>
+
+
+
+
+    <%- include("../partials/footer")  %>

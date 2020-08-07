@@ -5,11 +5,11 @@
         <h3>
             <form id="album-update" action="/albums/<%=album._id%>" method="PUT">
                 <label>Edit Title</label>
-                <input type="text" name="title" value="<%= album.title %>">
+                <input type="text" name="title" placeholder="<%= album.title %>">
                 <label>Edit Release Date</label>
-                <input type="date" name="releaseDate" value="<%= album.releaseDate %>">
+                <input type="date" name="releaseDate" placeholder="<%= album.releaseDate %>">
                 <label>Edit Label</label>
-                <input type="text" name="label" value="<%= album.label %>">
+                <input type="text" name="label" placeholder="<%= album.label %>">
                 <button type="submit">Edit Album</button>
             </form>
         </h3>
