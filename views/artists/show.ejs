@@ -1,0 +1,45 @@
+<%- include("../partials/header") %>
+    <section id="artist-dets">
+        <h1>
+            Artist Name:
+            <%= artist.name %>
+        </h1>
+
+        <h3>
+            Genre:
+            <%= artist.genre %>
+        </h3>
+
+        <h3>
+            <form action="/artists/<%=artist._id%>?_method=DELETE" method="POST">
+                <label>Delete Artist:</label>
+                <button type="submit">🚮</button>
+            </form>
+        </h3>
+
+        <h3>
+            <a href="/artists/<%=artist._id%>/edit">Edit Artist</a>
+        </h3>
+
+        <% if(artist.albums) { %>
+            <h3>Albums By This Artist:</h3>
+            <ul>
+                <%- artist.albums.map(al => 
+                `<li>${al.title}</li>`).join("") %>
+            </ul>
+            <% } else { %>
+
+                <h3>No Albums Entered Yet!</h3>
+
+                <h3><a href="/albums">Enter Albums</a></h3>
+
+                <% } %>
+
+    </section>
+
+
+
+
+
+
+    <%- include("../partials/footer") %>
