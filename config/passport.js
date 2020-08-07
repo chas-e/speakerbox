@@ -1,7 +1,9 @@
+// require passport, Spotify strategy, and User model
 const passport = require("passport");
 const SpotifyStrategy = require("passport-spotify").Strategy;
 const User = require("../models/user");
 
+// instantiate and configure the passport Spotify strategy
 passport.use(
     new SpotifyStrategy({
             clientID: process.env.SPOTIFY_CLIENT_ID,

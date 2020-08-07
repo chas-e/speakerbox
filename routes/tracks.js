@@ -1,7 +1,8 @@
+// require express, set up Router, require the controller
 const router = require("express").Router();
 const tracksCtrl = require("../controllers/tracks");
 
-
+// mount routes
 router.get("/tracks", isLoggedIn, tracksCtrl.index);
 router.post("/tracks", isLoggedIn, tracksCtrl.create);
 router.post("/albums/:id/tracks", isLoggedIn, tracksCtrl.addToAlbum);
