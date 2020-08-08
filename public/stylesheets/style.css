@@ -12,7 +12,7 @@ body {
     display: grid;
     display: flex;
     flex-direction: column;
-    color: #b3936a;
+    color: #1DB954;
     justify-content: center;
     align-content: center;
     text-align: center;
@@ -28,6 +28,7 @@ nav {
     display: flex;
     flex-direction: row;
     background-color: #100b08;
+    color: whitesmoke;
     height: 3rem;
     align-items: center;
 }
@@ -39,11 +40,11 @@ main {
 }
 
 h1 {
-    color: #b3936a;
+    color: #1DB954;
 }
 
 p {
-    color: #b3936a;
+    color: #1DB954;
     font-size: 16px;
     font-weight: bold;
 }
@@ -53,16 +54,16 @@ li {
 }
 
 a {
-    color: whitesmoke;
+    color: #1DB954;
 }
 
 a:hover {
-    color: #1DB954
+    color: whitesmoke;
 }
 
 footer {
     background-color: #100b08;
-    color: whitesmoke;
+    color: #1DB954;
     height: 2rem;
 }
 
